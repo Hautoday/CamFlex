@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingStart="30dp"
+    android:paddingEnd="10dp"
+    android:background="#FFFFFF">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"/>
+
+    <TextView
+        android:id="@+id/header_mon" style="@style/TimetableHeader"
+        app:layout_constraintEnd_toStartOf="@id/header_tue"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="월"/>
+
+    <TextView
+        android:id="@+id/header_tue" style="@style/TimetableHeader"
+        app:layout_constraintEnd_toStartOf="@id/header_wed"
+        app:layout_constraintStart_toEndOf="@id/header_mon"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="화"/>
+
+    <TextView
+        android:id="@+id/header_wed" style="@style/TimetableHeader"
+        app:layout_constraintEnd_toStartOf="@id/header_thu"
+        app:layout_constraintStart_toEndOf="@id/header_tue"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="수"/>
+
+    <TextView
+        android:id="@+id/header_thu" style="@style/TimetableHeader"
+        app:layout_constraintEnd_toStartOf="@id/header_fri"
+        app:layout_constraintStart_toEndOf="@id/header_wed"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="목"/>
+
+    <TextView
+        android:id="@+id/header_fri" style="@style/TimetableHeader"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/header_thu"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text="금"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.CamFlex"
+        tools:targetApi="31">
+
+        <activity
+            android:name=".startview.StartActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
+        <!--Login Activity 호출-->
+        <activity android:name=".loginActivity.LoginActivity" />
+        <!--Create Acount Activity 호출-->
+        <activity android:name=".createacount.CreateAcountActivity" />
+
+        <activity android:name=".mainview.MainActivity"/>
+        <!-- SearchActivity 추가 -->
+        <activity
+            android:name=".additionalfunction.SearchActivity"
+            android:exported="false" />
+        <activity android:name=".TimetableActivity" />
+        <activity android:name=".chattingactivity.Chat2Activity" />
+        <activity android:name=".chattingactivity.Chat3Activity" />
+        <activity android:name=".FlexActivity" />
+        <activity android:name=".ScheduleActivity" />
+        <activity android:name=".FavoriteActivity" />
+        <activity android:name=".createacount.Academy_Certifity_Activity"
+            android:exported="false" />
+        <activity android:name=".CenterActivity" />
+        <activity android:name=".ProductInputActivity"/>
+        <activity android:name=".ProductResultActivity"/>
+        <!-- 판매내역 화면-->
+        <activity android:name=".SellHistoryActivity" />
+        <!-- 구매내역 화면-->
+        <activity android:name=".PurchaseHistoryActivity" />
+        <activity android:name=".ProductActivity" />
+        <activity android:name=".editprofile.user_infomation_activiry" />
+        <activity android:name=".editprofile.EditFrofileActivity" />
+        <activity android:name=".HeartActivity" />
+        <activity android:name=".BeautyActivity" />
+        <activity android:name=".TextBookActivity" />
+        <activity android:name=".ClothingActivity" />
+        <activity android:name=".LostActivity" />
+        <activity android:name=".GoodsActivity" />
+        <activity android:name=".EtcActivity" />
+        <activity android:name=".ProductRegisterActivity" />
+
+
+
+
+    </application>
+
+</manifest>

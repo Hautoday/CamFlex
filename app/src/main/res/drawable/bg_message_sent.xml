@@ -1,0 +1,11 @@
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+
+    <!-- 배경색: 초록 -->
+    <solid android:color="#66cc33"/>
+
+    <!-- 모서리 둥글게 -->
+    <corners android:radius="12dp"/>
+
+    <!-- 패딩 안 넣어도 TextView에서 넣으면 됨 -->
+</shape>

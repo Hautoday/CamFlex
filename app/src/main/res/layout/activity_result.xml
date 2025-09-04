@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF">
+
+    <!-- 스크롤 가능한 콘텐츠 영역 -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <!-- ✅ 상단 이미지 -->
+            <ImageView
+                android:id="@+id/mainImageView"
+                android:layout_width="match_parent"
+                android:layout_height="275dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/prd1" />
+
+            <!-- 추가 콘텐츠가 있으면 여기 아래에 추가하면 됨 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp">
+
+                <ImageView
+                    android:layout_width="114dp"
+                    android:layout_height="94dp"
+                    android:src="@drawable/prd2" />
+
+                <LinearLayout
+                    android:layout_width="158dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="덜덜이"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="12dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="금촌동"
+                        android:textSize="16sp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginTop="2dp" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="학점: 4.3 / 4.5"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:gravity="center_vertical"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <!-- ✅ 제목 -->
+            <TextView
+                android:id="@+id/titleTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="미개봉 건프라 팝니다"
+                android:textSize="25sp"
+                android:textStyle="bold"
+                android:paddingTop="16dp"
+                android:layout_marginLeft="15dp" />
+
+            <!-- ✅ 가격 -->
+            <TextView
+                android:id="@+id/priceTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="34dp"
+                android:layout_marginLeft="15dp"
+                android:text="150,000원"
+                android:textSize="25sp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/categoryChip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="카테고리"
+                android:textSize="13sp"
+                android:textColor="#ffffff"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="6dp"
+                android:background="#00cc00"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="8dp"/>
+            <!-- ✅ 설명 -->
+            <TextView
+                android:id="@+id/descTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="설명 없음"
+                android:textSize="16sp"
+                android:lineSpacingExtra="4dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="거래 희망 장소"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="18dp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="136dp"
+                android:src="@drawable/map"
+                android:layout_marginLeft="18dp"
+                android:layout_marginRight="18dp" />
+        </LinearLayout>
+    </ScrollView>
+    <!-- 하단 고정 버튼 영역 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:gravity="end">
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="가격조정하기"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#00CC00" />
+    </LinearLayout>
+</LinearLayout>
