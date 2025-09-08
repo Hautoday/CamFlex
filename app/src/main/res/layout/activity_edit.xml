@@ -91,9 +91,11 @@
 
         <!-- 🔹 판매 물품 -->
 
-        <TextView
-            android:id="@+id/item_timetable"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/Timetable"
+            android:textColor="@color/black"
+            android:backgroundTint="#FFFFFF"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
             android:clickable="true"
@@ -102,9 +104,11 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/item1Count"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/Notice"
+            android:textColor="@color/black"
+            android:backgroundTint="#FFFFFF"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="공지사항"
             android:textSize="16sp"
@@ -113,9 +117,11 @@
             android:gravity="center_vertical" />
 
         <!-- 🔹 받은 평가 -->
-        <TextView
-            android:id="@+id/reviewCount"
-            android:layout_width="match_parent"
+        <Button
+            android:id="@+id/AppM"
+            android:textColor="@color/black"
+            android:backgroundTint="#FFFFFF"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="앱 관리"
             android:textSize="16sp"

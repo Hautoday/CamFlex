@@ -6,6 +6,8 @@ import android.view.View;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.camflex.editprofile.TimetableActivity;
+
 public class myTimeActivity extends AppCompatActivity { // or Fragment
 
     @Override
@@ -13,7 +15,7 @@ public class myTimeActivity extends AppCompatActivity { // or Fragment
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit); // "내 시간표" 텍스트뷰가 있는 XML 레이아웃 파일명
 
-        TextView itemTimetable = findViewById(R.id.item_timetable);
+        TextView itemTimetable = findViewById(R.id.Timetable);
 
         itemTimetable.setOnClickListener(new View.OnClickListener() {
             @Override

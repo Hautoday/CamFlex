@@ -1,4 +1,4 @@
-package com.example.camflex;
+package com.example.camflex.category.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,10 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class ProductInputActivity extends AppCompatActivity {
+import com.example.camflex.ProductResultActivity;
+import com.example.camflex.R;
+
+public class GoodsActivity extends AppCompatActivity {
 
     Button btnRegister;
 
@@ -22,7 +25,7 @@ public class ProductInputActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // 결과 화면으로 이동
-                Intent intent = new Intent(ProductInputActivity.this, ProductResultActivity.class);
+                Intent intent = new Intent(GoodsActivity.this, ProductResultActivity.class);
                 startActivity(intent);
             }
         });

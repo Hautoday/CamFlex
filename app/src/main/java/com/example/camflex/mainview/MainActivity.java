@@ -12,7 +12,7 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.app.Fragment;
 
-import com.example.camflex.CategoryFragment;
+import com.example.camflex.category.CategoryFragment;
 import com.example.camflex.chattingactivity.ChatFragment;
 import com.example.camflex.fragment.HomeFragment;
 import com.example.camflex.fragment.ProfileFragment;

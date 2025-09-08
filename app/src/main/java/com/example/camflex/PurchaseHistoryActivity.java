@@ -19,7 +19,7 @@ public class PurchaseHistoryActivity extends AppCompatActivity {
         RecyclerView recyclerView = findViewById(R.id.purchase_history_recyclerview);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        // 샘플 데이터
+
         List<PurchaseItem> items = new ArrayList<>();
         items.add(new PurchaseItem("MG 이클립스 건담 팝니다.", "경기도 고양시 일산서구 • 1주 전", "거래완료", "50,000원", R.drawable.simple_book_image2));
         items.add(new PurchaseItem("RG 건담 엑시아 판매", "서울 강남구 • 3일 전", "거래중", "45,000원", R.drawable.simple_book_image2));

@@ -1,4 +1,4 @@
-package com.example.camflex;
+package com.example.camflex.category;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +12,17 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+
+import com.example.camflex.BeautyActivity;
+import com.example.camflex.EtcActivity;
+import com.example.camflex.GoodsActivity;
+import com.example.camflex.LostActivity;
+import com.example.camflex.ProductActivity;
+import com.example.camflex.ProductRegisterActivity;
+import com.example.camflex.R;
+import com.example.camflex.TextBookActivity;
+import com.example.camflex.category.menus.ClothingActivity;
+import com.example.camflex.category.menus.ProductInputActivity;
 
 public class CategoryFragment extends Fragment {
 
@@ -37,7 +48,7 @@ public class CategoryFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // 뷰 연결
-        tvTip           = view.findViewById(R.id.tv_tip_message);
+        tvTip = view.findViewById(R.id.tv_tip_message);
         layoutTextBook  = view.findViewById(R.id.layout_textbook);
         layoutClothing   = view.findViewById(R.id.layout_clothing);
         layoutLost = view.findViewById(R.id.layout_lost);
@@ -61,12 +72,48 @@ public class CategoryFragment extends Fragment {
         }
     }
 
+//    private void setClick(LinearLayout layout, String categoryName) {
+//        if (layout == null) return;
+//        layout.setOnClickListener(v -> {
+//            Intent intent = new Intent(requireContext(), ProductRegisterActivity.class);
+//            intent.putExtra("selected_category", categoryName); // 카테고리 이름 전달
+//            startActivity(intent);
+//        });
+//    }
     private void setClick(LinearLayout layout, String categoryName) {
         if (layout == null) return;
+
         layout.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), ProductRegisterActivity.class);
-            intent.putExtra("selected_category", categoryName); // 카테고리 이름 전달
-            startActivity(intent);
+            Intent intent = null;
+            switch (categoryName) {
+                case "교재":
+                    intent = new Intent(requireContext(), TextBookActivity.class);
+                    break;
+                case "의류":
+                    intent = new Intent(requireContext(), TextBookActivity.class);
+                    break;
+                case "분실물":
+                    intent = new Intent(requireContext(), LostActivity.class);
+                    break;
+                case "뷰티":
+                    intent = new Intent(requireContext(), BeautyActivity.class);
+                    break;
+                case "생활용품":
+                    intent = new Intent(requireContext(), GoodsActivity.class);
+                    break;
+                case "기타":
+                    intent = new Intent(requireContext(), EtcActivity.class);
+                    break;
+            }
+
+            if (intent != null) {
+                startActivity(intent);
+            }
         });
+    }
+
+
+    private void events(){
+
     }
 }

@@ -34,7 +34,7 @@
         <activity
             android:name=".additionalfunction.SearchActivity"
             android:exported="false" />
-        <activity android:name=".TimetableActivity" />
+        <activity android:name=".editprofile.TimetableActivity"/>
         <activity android:name=".chattingactivity.Chat2Activity" />
         <activity android:name=".chattingactivity.Chat3Activity" />
         <activity android:name=".FlexActivity" />
@@ -43,7 +43,7 @@
         <activity android:name=".createacount.Academy_Certifity_Activity"
             android:exported="false" />
         <activity android:name=".CenterActivity" />
-        <activity android:name=".ProductInputActivity"/>
+        <activity android:name=".category.menus.ProductInputActivity"/>
         <activity android:name=".ProductResultActivity"/>
         <!-- 판매내역 화면-->
         <activity android:name=".SellHistoryActivity" />
@@ -55,12 +55,12 @@
         <activity android:name=".HeartActivity" />
         <activity android:name=".BeautyActivity" />
         <activity android:name=".TextBookActivity" />
-        <activity android:name=".ClothingActivity" />
         <activity android:name=".LostActivity" />
         <activity android:name=".GoodsActivity" />
         <activity android:name=".EtcActivity" />
         <activity android:name=".ProductRegisterActivity" />
-
+        <activity android:name=".category.menus.ClothingActivity"/>
+        <activity android:name=".editprofile.NoticeActivity"/>
 
 
 

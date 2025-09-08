@@ -1,10 +1,13 @@
-package com.example.camflex;
+package com.example.camflex.category.menus;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.camflex.ProductRegisterActivity;
+import com.example.camflex.R;
 
 public class ClothingActivity extends AppCompatActivity {
 

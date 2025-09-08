@@ -1,5 +1,11 @@
 package com.example.camflex;
 
+import android.widget.ImageView;
+import android.app.AlertDialog;
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
+import java.util.Calendar;
+import android.widget.Switch;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -24,6 +30,11 @@ public class ScheduleActivity extends AppCompatActivity {
     // --- TimetableActivity에서 가져온 변수들 ---
     private GridLayout timetableGrid;
     private final String[] colors = {"#E1BEE7", "#D1C4E9", "#C5CAE9", "#BBDEFB", "#B3E5FC", "#B2EBF2", "#B2DFDB", "#C8E6C9"};
+
+    // 날짜, 시간 텍스트뷰
+    private TextView dateText, timeText, minuteText;
+    private View minuteLayout;
+    private Switch reminderSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +65,38 @@ public class ScheduleActivity extends AppCompatActivity {
         addClassBlock("네트워크", "공6302", 3, 1, 3); // 수요일 10시 (3시간)
         addClassBlock("알고리즘", "목6401", 4, 4, 2); // 목요일 1시 (2시간)
         addClassBlock("컴퓨터구조", "목6203", 5, 0, 2); // 금요일 9시 (2시간)
+
+
+
+
+        // --- 날짜 선택 기능 추가 ---
+        dateText = findViewById(R.id.dateText);
+        ImageView dateArrow = findViewById(R.id.dateArrow);
+        dateArrow.setOnClickListener(v -> showDatePicker());
+
+        // --- 시간 선택 기능 추가 ---
+        timeText = findViewById(R.id.timeText);
+        ImageView timeArrow = findViewById(R.id.timeArrow);
+        timeArrow.setOnClickListener(v -> showTimePicker());
+
+        // 리마인드 스위치 & 분 선택
+        minuteText = findViewById(R.id.minuteText);
+        minuteLayout = findViewById(R.id.minuteLayout);
+        reminderSwitch = findViewById(R.id.reminderSwitch);
+        ImageView minuteArrow = findViewById(R.id.minuteArrow);
+
+        // 초기 상태 설정
+        setMinuteLayoutEnabled(reminderSwitch.isChecked());
+
+        // 스위치 토글 이벤트
+        reminderSwitch.setOnCheckedChangeListener((buttonView, isChecked) -> setMinuteLayoutEnabled(isChecked));
+
+        // 알람 시간 선택
+        minuteArrow.setOnClickListener(v -> {
+            if (reminderSwitch.isChecked()) {
+                showMinuteDialog();
+            }
+        });
     }
 
     /**
@@ -91,5 +134,57 @@ public class ScheduleActivity extends AppCompatActivity {
         classBlockView.setLayoutParams(params);
 
         timetableGrid.addView(classBlockView);
+    }
+
+
+
+    // --- 날짜 선택 다이얼로그 ---
+    private void showDatePicker() {
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH);
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+
+        DatePickerDialog datePickerDialog = new DatePickerDialog(this,
+                (view, selectedYear, selectedMonth, selectedDay) -> {
+                    // 선택한 날짜 포맷팅
+                    String dateStr = String.format("%04d.%02d.%02d", selectedYear, selectedMonth + 1, selectedDay);
+                    dateText.setText(dateStr);
+                }, year, month, day);
+        datePickerDialog.show();
+    }
+
+
+    // --- 시간 선택 다이얼로그 ---
+    private void showTimePicker() {
+        Calendar calendar = Calendar.getInstance();
+        int hour = calendar.get(Calendar.HOUR_OF_DAY);
+        int minute = calendar.get(Calendar.MINUTE);
+
+        TimePickerDialog timePickerDialog = new TimePickerDialog(this,
+                (view, selectedHour, selectedMinute) -> {
+                    String ampm = selectedHour >= 12 ? "오후" : "오전";
+                    int displayHour = selectedHour % 12;
+                    if (displayHour == 0) displayHour = 12;
+                    String timeStr = String.format("%s %d:%02d", ampm, displayHour, selectedMinute);
+                    timeText.setText(timeStr);
+                }, hour, minute, false);
+        timePickerDialog.show();
+    }
+
+    // 리마인드 알람 설정
+    private void showMinuteDialog() {
+        String[] options = {"10분 전", "30분 전", "1시간 전", "2시간 전"};
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("리마인드 알림 시간 선택")
+                .setItems(options, (dialog, which) -> minuteText.setText(options[which]))
+                .show();
+    }
+
+    private void setMinuteLayoutEnabled(boolean enabled) {
+        minuteLayout.setAlpha(enabled ? 1f : 0.5f); // 반투명 처리
+        minuteLayout.setClickable(enabled);
+        minuteText.setTextColor(enabled ? Color.BLACK : Color.GRAY);
     }
 }
