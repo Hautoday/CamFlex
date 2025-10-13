@@ -86,9 +86,3 @@ docker run --name camflex-mysql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysq
 # 3. 앱 실행
 
 ```
-
-## 👨‍💻 팀원
-
-- 함기찬, 이하늘 – Android 개발
-- 함기찬, 이하늘 – 서버/DB 개발
-- 함기찬, 이하늘 – UI/UX 디자인
