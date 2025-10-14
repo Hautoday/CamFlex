@@ -78,7 +78,7 @@ cd CamFlex
 
 # Docker MySQL 실행
 docker pull mysql:latest
-docker run --name camflex-mysql -e MYSQL_ROOT_PASSWORD=1234 -d -p 3306:3306 mysql
+
 
 # Android Studio 실행 후
 # 1. 프로젝트 열기
