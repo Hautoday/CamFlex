@@ -13,16 +13,13 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-import com.example.camflex.BeautyActivity;
-import com.example.camflex.EtcActivity;
-import com.example.camflex.GoodsActivity;
-import com.example.camflex.LostActivity;
-import com.example.camflex.ProductActivity;
-import com.example.camflex.ProductRegisterActivity;
 import com.example.camflex.R;
-import com.example.camflex.TextBookActivity;
+import com.example.camflex.category.menus.TextBookActivity;
 import com.example.camflex.category.menus.ClothingActivity;
-import com.example.camflex.category.menus.ProductInputActivity;
+import com.example.camflex.category.menus.BeautyActivity;
+import com.example.camflex.category.menus.EtcActivity;
+import com.example.camflex.category.menus.GoodsActivity;
+import com.example.camflex.category.menus.LostActivity;
 
 public class CategoryFragment extends Fragment {
 
@@ -75,11 +72,12 @@ public class CategoryFragment extends Fragment {
 //    private void setClick(LinearLayout layout, String categoryName) {
 //        if (layout == null) return;
 //        layout.setOnClickListener(v -> {
-//            Intent intent = new Intent(requireContext(), ProductRegisterActivity.class);
-//            intent.putExtra("selected_category", categoryName); // 카테고리 이름 전달
+//            Intent intent = new Intent(requireContext(), TextBookActivity.class);
+//            intent.putExtra("category", categoryName); // 👈 카테고리명 전달
 //            startActivity(intent);
 //        });
 //    }
+
     private void setClick(LinearLayout layout, String categoryName) {
         if (layout == null) return;
 
@@ -90,7 +88,7 @@ public class CategoryFragment extends Fragment {
                     intent = new Intent(requireContext(), TextBookActivity.class);
                     break;
                 case "의류":
-                    intent = new Intent(requireContext(), TextBookActivity.class);
+                    intent = new Intent(requireContext(), ClothingActivity.class);
                     break;
                 case "분실물":
                     intent = new Intent(requireContext(), LostActivity.class);

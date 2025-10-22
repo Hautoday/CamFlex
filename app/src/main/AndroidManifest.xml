@@ -2,6 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES"
+        tools:ignore="PhotoAndVideoPolicy" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -11,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.CamFlex"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
 
         <activity
@@ -18,7 +25,6 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
@@ -43,8 +49,7 @@
         <activity android:name=".createacount.Academy_Certifity_Activity"
             android:exported="false" />
         <activity android:name=".CenterActivity" />
-        <activity android:name=".category.menus.ProductInputActivity"/>
-        <activity android:name=".ProductResultActivity"/>
+        <activity android:name=".category.ProductResultActivity"/>
         <!-- 판매내역 화면-->
         <activity android:name=".SellHistoryActivity" />
         <!-- 구매내역 화면-->
@@ -53,12 +58,12 @@
         <activity android:name=".editprofile.user_infomation_activiry" />
         <activity android:name=".editprofile.EditFrofileActivity" />
         <activity android:name=".HeartActivity" />
-        <activity android:name=".BeautyActivity" />
-        <activity android:name=".TextBookActivity" />
-        <activity android:name=".LostActivity" />
-        <activity android:name=".GoodsActivity" />
-        <activity android:name=".EtcActivity" />
-        <activity android:name=".ProductRegisterActivity" />
+        <activity android:name=".category.menus.BeautyActivity" />
+        <activity android:name=".category.menus.TextBookActivity" />
+        <activity android:name=".category.menus.LostActivity" />
+        <activity android:name=".category.menus.GoodsActivity" />
+        <activity android:name=".category.menus.EtcActivity" />
+        <activity android:name=".category.ProductRegisterActivity" />
         <activity android:name=".category.menus.ClothingActivity"/>
         <activity android:name=".editprofile.NoticeActivity"/>
 

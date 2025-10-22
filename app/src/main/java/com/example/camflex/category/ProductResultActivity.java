@@ -1,7 +1,9 @@
-package com.example.camflex;
+package com.example.camflex.category;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.camflex.R;
 
 public class ProductResultActivity extends AppCompatActivity {
     @Override

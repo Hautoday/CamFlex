@@ -8,8 +8,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.camflex.R;
 import com.example.camflex.mainview.MainActivity;
+import com.example.camflex.R;
 
 public class Chat3Activity extends AppCompatActivity {
 

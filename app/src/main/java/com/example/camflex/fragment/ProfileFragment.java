@@ -24,16 +24,11 @@ import com.example.camflex.startview.StartActivity;
 
 public class ProfileFragment extends Fragment {
 
-    public ProfileFragment() {
-        // Required empty public constructor
-    }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater,
                              @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        // fragment_profile 레이아웃 인플레이트
         return inflater.inflate(R.layout.fragment_profile, container, false);
     }
 
@@ -54,31 +49,33 @@ public class ProfileFragment extends Fragment {
         TextView withdraw = view.findViewById(R.id.withdraw);
         TextView logout = view.findViewById(R.id.logout);
 
-        // 클릭 이벤트
+        // ✅ MainActivity에서 전달받은 username 값 표시
+        if (getArguments() != null) {
+            String name = getArguments().getString("username", "사용자");
+            username.setText(name);
+        }
+
+        // 클릭 이벤트들
         btnProfileEdit.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), user_infomation_activiry.class);
             startActivity(intent);
         });
 
-        // ✅ 찜 목록 → FavoriteActivity 이동
         likeList.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), FavoriteActivity.class);
             startActivity(intent);
         });
 
-        // 판매 내역 → SaleHistoryActivity 이동
         sellHistory.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), SellHistoryActivity.class);
             startActivity(intent);
         });
 
-        // 구매 내역 → PurchaseHistoryActivity 이동
         purchaseHistory.setOnClickListener(v -> {
             Intent intent = new Intent(requireContext(), PurchaseHistoryActivity.class);
             startActivity(intent);
         });
 
-        // 고객센터 클릭 시 CenterActivity 로 이동
         customerCenter.setOnClickListener(v -> {
             Intent intent = new Intent(getActivity(), CenterActivity.class);
             startActivity(intent);
